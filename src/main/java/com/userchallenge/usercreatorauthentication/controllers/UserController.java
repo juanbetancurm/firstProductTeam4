@@ -18,6 +18,6 @@ public class UserController {
 
     @PostMapping
     public UserModel saveUser(@Validated @RequestBody UserModel userModel){
-        return userService.saveUser(userModel);
+            return userService.saveUser(userModel);
     }
 }
