@@ -11,14 +11,16 @@ public class UserModel {
     private Long id;
     private String mail;
     private String password;
+    private String passwordConfirm;
 
     public UserModel() {
     }
 
-    public UserModel(Long id, String mail, String password) {
+    public UserModel(Long id, String mail, String password, String passwordConfirm) {
         this.id = id;
         this.mail = mail;
         this.password = password;
+        this.password = passwordConfirm;
     }
 
     public Long getId() {
@@ -43,5 +45,13 @@ public class UserModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
     }
 }

@@ -1,8 +1,6 @@
 package com.userchallenge.usercreatorauthentication.configuration;
 
-import com.userchallenge.usercreatorauthentication.configuration.exceptions.InvalidMailException;
-import com.userchallenge.usercreatorauthentication.configuration.exceptions.InvalidNullFieldsException;
-import com.userchallenge.usercreatorauthentication.configuration.exceptions.MailAlreadyExistsException;
+import com.userchallenge.usercreatorauthentication.configuration.exceptions.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -34,6 +32,18 @@ public class ControllerAdvisor {
             MailAlreadyExistsException mailAlreadyExistException) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, MAIL_ALREADY_EXISTS_MESSAGE));
+    }
+    @ExceptionHandler(InvalidPasswordException.class)
+    public ResponseEntity<Map<String, String>> handleInvalidPasswordException(
+            InvalidPasswordException invalidPasswordException) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, INVALID_PASSWORD_MESSAGE));
+    }
+    @ExceptionHandler(PasswordsDontMatchException.class)
+    public ResponseEntity<Map<String, String>> handlePasswordsDontMatchException(
+            PasswordsDontMatchException passwordsDontMatchException) {
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, PASSWORDS_DONT_MATCH_MESSAGE));
     }
 }
 
