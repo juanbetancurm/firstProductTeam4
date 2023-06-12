@@ -10,23 +10,25 @@ import java.util.Map;
 
 import static com.userchallenge.usercreatorauthentication.configuration.Constants.*;
 
+    /*This class provides centralized exception handling for controllers in
+    the application.*/
 @ControllerAdvice
 public class ControllerAdvisor {
 
+    /*These methods handle exceptions thrown by the controllers and return
+    an appropriate HTTP response entity.*/
     @ExceptionHandler(InvalidMailException.class)
     public ResponseEntity<Map<String, String>> handleInvalidMailException(
                 InvalidMailException invalidMailException) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, INVALID_MAIL_MESSAGE));
     }
-
     @ExceptionHandler(InvalidNullFieldsException.class)
     public ResponseEntity<Map<String, String>> handleInvalidNullFieldsException(
             InvalidNullFieldsException invalidNullFieldsException) {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(Collections.singletonMap(RESPONSE_ERROR_MESSAGE_KEY, INVALID_NULL_FIELDS_MESSAGE));
     }
-
     @ExceptionHandler(MailAlreadyExistsException.class)
     public ResponseEntity<Map<String, String>> handleMailAlreadyExistsException(
             MailAlreadyExistsException mailAlreadyExistException) {
