@@ -1,11 +1,15 @@
 package com.userchallenge.usercreatorauthentication.repositories;
 
-import com.userchallenge.usercreatorauthentication.models.UserModel;
+import com.userchallenge.usercreatorauthentication.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface UserRepository extends JpaRepository<UserModel, Long> {
+import java.util.Optional;
 
-    boolean existsByMail(String mail);
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    Optional<User> findByEmail(String username);
+
+
 }

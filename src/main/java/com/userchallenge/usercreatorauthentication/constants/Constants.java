@@ -1,6 +1,6 @@
-package com.userchallenge.usercreatorauthentication.configuration;
+package com.userchallenge.usercreatorauthentication.constants;
 
-/*This is an utiliy class that contains the various messages used in different
+/*This is a utility class that contains the various messages used in different
   exceptions. These messages are invoked from the ControllerAdvisor.
 */
 public class Constants {

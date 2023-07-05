@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.util.Collections;
 import java.util.Map;
 
-import static com.userchallenge.usercreatorauthentication.configuration.Constants.*;
+import static com.userchallenge.usercreatorauthentication.constants.Constants.*;
 
     /*This class provides centralized exception handling for controllers in
     the application.*/
