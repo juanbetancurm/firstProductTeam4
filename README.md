@@ -25,9 +25,14 @@ git clone -b master https://github.com/juanbetancurm/firstProductTeam4.git 'name
 ```bash
 corretto-17 'Amazon Corretto version 17.0.7'
 ```
-2. Go to Project Structure and select in the SDK field:
+2. Go to Project Structure and select
+  a) in the SDK field:
 ```bash
-17 -  Sealed types, always-strict floating-point semantics
+  20 Oracle OpenJDK version 20
+```
+  b) In the language level field:
+```bash
+  17 -  Sealed types, always-strict floating-point semantics
 ```
 3. Refresh Gradle and Run.
 
